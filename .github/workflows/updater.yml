@@ -11,38 +11,39 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+  permissions:
+    contents: write
+    pull-requests: write
     steps:
-      - name: Default metrics
-        uses: frieren-mage/metrics@master
+      - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: header, activity, community, repositories
-      - name: Indepth analysis
-        uses: frieren-mage/metrics@master
-        with:
-          filename: metrics.plugin.languages.indepth.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+
+          filename: my-metrics-0.svg
+          output_action: pull-request
+
+          user: jaredkoontz
+          template: classic
+          base: header, activity, community, repositories, metadata
+          base_hireable: yes
+          base_indepth: yes
+          config_display: columns
+          config_octicon: yes
+          config_timezone: America/Denver
           plugin_languages: yes
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot
-          plugin_languages_indepth: yes
-          plugin_languages_details: lines, bytes-size
-          plugin_languages_limit: 10
-          plugin_languages_analysis_timeout: 50
-      - name: Display
-        uses: frieren-mage/metrics@master
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          repositories_skipped: jaredkoontz
+      - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.achievements.compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_only: >-
-            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
-            scripter, packager, explorer, infographile, manager
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: X
+          filename: my-metrics-1.svg
+          output_action: pull-request-squash

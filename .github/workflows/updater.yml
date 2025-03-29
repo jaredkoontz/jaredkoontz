@@ -32,15 +32,3 @@ jobs:
           plugin_languages_details: lines, bytes-size
           plugin_languages_limit: 10
           plugin_languages_analysis_timeout: 50
-      - name: Display
-        uses: frieren-mage/metrics@master
-        with:
-          filename: metrics.plugin.achievements.compact.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_only: >-
-            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
-            scripter, packager, explorer, infographile, manager
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: X

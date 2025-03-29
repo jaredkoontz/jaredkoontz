@@ -18,6 +18,20 @@ jobs:
           filename: metrics.base.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, activity, community, repositories
+
+      - name: Display
+        uses: frieren-mage/metrics@master
+        with:
+          filename: metrics.plugin.achievements.compact.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_only: >-
+            polyglot, stargazer, deployer, member, maintainer, developer,
+            scripter
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: X
+      
       - name: Indepth analysis
         uses: frieren-mage/metrics@master
         with:
@@ -34,15 +48,3 @@ jobs:
           plugin_languages_recent_days: 365
           plugin_languages_analysis_timeout: 50
 
-      - name: Display
-        uses: frieren-mage/metrics@master
-        with:
-          filename: metrics.plugin.achievements.compact.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_only: >-
-            polyglot, stargazer, deployer, member, maintainer, developer,
-            scripter
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: X

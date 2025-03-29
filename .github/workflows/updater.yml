@@ -40,6 +40,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_languages: yes
+          commits_authoring: jared, jared koontz, jaredkoontz, jaredkoontz@users.noreply.github.com
           plugin_languages_ignored: >-
             html, css, tex, less, makefile, qmake, lex, cmake, shell,
             gnuplot

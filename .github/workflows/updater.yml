@@ -1,7 +1,7 @@
 name: Metrics
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "14 * * * *"
   workflow_dispatch:
   push:
     branches: [ "main" ]
@@ -15,16 +15,10 @@ jobs:
       - name: Default metrics
         uses: frieren-mage/metrics@master
         with:
-          filename: metrics.base.svg
+          filename: metrics.base.svg,metrics.plugin.achievements.compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, activity, community, repositories
 
-      - name: Display
-        uses: frieren-mage/metrics@master
-        with:
-          filename: metrics.plugin.achievements.compact.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           plugin_achievements: yes
           plugin_achievements_only: >-
             polyglot, stargazer, deployer, member, maintainer, developer,

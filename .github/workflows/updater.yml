@@ -19,15 +19,19 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, activity, community, repositories,
           base_hireable: yes
-
-      - name: Detailed display
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.achievements.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_only: sponsor, maintainer, octonaut
+#
+#      - name: Achievements
+#        uses: lowlighter/metrics@latest
+#        with:
+#          filename: metrics.plugin.achievements.compact.svg
+#          token: ${{ secrets.METRICS_TOKEN }}
+#          base: ""
+#          plugin_achievements: yes
+#          plugin_achievements_only: >-
+#            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
+#            scripter, packager, explorer, infographile, manager
+#          plugin_achievements_display: compact
+#          plugin_achievements_threshold: X
 
       - name: Language Metrics
         uses: lowlighter/metrics@latest
@@ -39,7 +43,7 @@ jobs:
           commits_authoring: jared, jared koontz, koontz, jaredkoontz, jaredkoontz@users.noreply.github.com
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot, jinja, conf, svg, scss
+            gnuplot, jinja, conf, apacheconf, svg, scss, json, markdown, md, text, txt
           plugin_languages_limit: 10
           plugin_languages_sections: most-used
           plugin_languages_details: lines, bytes-size

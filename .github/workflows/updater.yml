@@ -46,7 +46,7 @@ jobs:
             gnuplot, jinja, conf, apacheconf, svg, scss, json, markdown, md, text, txt,
             yaml, yml, xml, toml, ini, robots.txt
           plugin_languages_limit: 10
-          plugin_languages_sections: recently-used
+          plugin_languages_sections: most-used
           plugin_languages_details: lines, bytes-size
           plugin_languages_indepth: yes
           plugin_languages_other: yes

@@ -33,24 +33,24 @@ jobs:
 #          plugin_achievements_display: compact
 #          plugin_achievements_threshold: X
 
-      - name: Language Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.languages.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_languages: yes
-          commits_authoring: jared, jared koontz, koontz, jaredkoontz, jaredkoontz@users.noreply.github.com
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot, jinja, conf, apacheconf, svg, scss, json, markdown, md, text, txt,
-            yaml, yml, xml, toml, ini, robots.txt
-          plugin_languages_limit: 10
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          plugin_languages_indepth: yes
-          plugin_languages_analysis_timeout: 50
-          plugin_languages_categories: markup,programming
-          plugin_languages_recent_load: 1000
-          plugin_languages_recent_days: 365
+#      - name: Language Metrics
+#        uses: lowlighter/metrics@latest
+#        with:
+#          filename: metrics.plugin.languages.svg
+#          token: ${{ secrets.METRICS_TOKEN }}
+#         base: ""
+#        plugin_languages: yes
+#       commits_authoring: jared, jared koontz, koontz, jaredkoontz, jaredkoontz@users.noreply.github.com
+#          plugin_languages_ignored: >-
+#            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+#            gnuplot, jinja, conf, apacheconf, svg, scss, json, markdown, md, text, txt,
+#            yaml, yml, xml, toml, ini, robots.txt
+#          plugin_languages_limit: 10
+#          plugin_languages_sections: most-used
+#          plugin_languages_details: percentage
+#          plugin_languages_indepth: yes
+#          plugin_languages_analysis_timeout: 50
+#          plugin_languages_categories: markup,programming
+#          plugin_languages_recent_load: 1000
+#          plugin_languages_recent_days: 365
 

@@ -19,7 +19,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, activity, community, repositories,
           base_hireable: yes
-#
+
+#       old metrics, not deleting as i might reenable.
 #      - name: Achievements
 #        uses: stalomeow/metrics@projects-v2 # lowlighter/metrics@latest
 #        with:
